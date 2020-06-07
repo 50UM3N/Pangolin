@@ -1,0 +1,211 @@
+:root {
+  --col1: #fcfcfc;
+  --col2: #e5e5e5;
+  --col3: #858585;
+  --col4: #eefcff;
+  --col5: #ff9b24;
+  --col6: #ffa943;
+  --col7: #304598;
+  --col8: #374c9f;
+  --hfont: 7vmax;
+  --btnfont: 12px;
+  --txtfontfamily: "Ubuntu", sans-serif;
+  --hfontfamily: "Baloo 2", cursive;
+}
+
+* {
+  font-family: var(--txtfontfamily);
+  font-weight: 400;
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: var(--col1);
+}
+
+header {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  z-index: 2;
+  padding: 0px 30px;
+}
+
+header .main-icon {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url(/pictures/pangolin.svg);
+}
+
+header .main-icon a {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav ul a {
+  font-size: 16px;
+  position: relative;
+  padding: 10px 20px 10px 20px;
+  font-style: var(--hfontfamily);
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+header nav ul a::before {
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  content: "";
+  background-color: var(--col8);
+  width: 0px;
+  height: 2px;
+  border-radius: 1px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+header nav ul a:hover::before {
+  width: 100%;
+  left: 0%;
+}
+
+header .menu {
+  height: 40px;
+  width: 40px;
+  background-image: url(/pictures/menu.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  fill: white;
+  color: white;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+section .background-img {
+  position: absolute;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  background-image: url(/pictures/background.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.164);
+  z-index: -1;
+}
+
+section section {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: var(--col4);
+}
+
+section section h1 {
+  font-family: var(--hfontfamily);
+  font-weight: 500;
+  line-height: 7vmax;
+  font-size: var(--hfont);
+}
+
+section section p {
+  margin: 30px 0px 30px 0px;
+  font-size: calc(1rem + 1vmax);
+  padding: 0px 20px 0px 20px;
+}
+
+section section button {
+  padding: 10px 20px 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: var(--btnfont);
+  font-weight: bold;
+  background-color: var(--col4);
+  color: var(--col8);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+section section button:hover {
+  background-color: var(--col8);
+  color: var(--col4);
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0px 20px;
+  }
+  header nav {
+    display: none;
+  }
+  section section {
+    padding: 10px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
