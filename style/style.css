@@ -128,7 +128,7 @@ header svg:hover {
   width: var(--width-height);
   height: var(--width-height);
   width: 100%;
-  background-image: url("/background.svg");
+  background-image: url("background.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
