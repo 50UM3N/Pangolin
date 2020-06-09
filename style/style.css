@@ -48,7 +48,6 @@ header .main-icon {
   width: 40px;
   height: 40px;
   background-repeat: no-repeat;
-  background-image: url(/pictures/pangolin.svg);
 }
 
 header .main-icon a {
@@ -128,7 +127,8 @@ header svg:hover {
   z-index: -2;
   width: var(--width-height);
   height: var(--width-height);
-  background-image: url(/pictures/background.svg);
+  width: 100%;
+  background-image: url("/pictures/background.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
