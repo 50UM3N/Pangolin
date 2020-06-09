@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swp" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,500&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,500&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Ubuntu:wght@300;400;500;700&display=swap"
         rel="stylesheet">
@@ -16,8 +20,8 @@
 
 <body>
     <header>
-        <a href="index.html" ><img class="main-icon" src="pictures/pangolin.svg" alt=""></a>
-        <nav>
+        <a href="index.html"><img class="main-icon" src="pictures/pangolin.svg" alt=""></a>
+        <nav class="nav2" id="navigation">
             <ul>
                 <li><a href="#"><span>Home</span></a></li>
                 <li><a href="#"><span>Pages</span></a></li>
@@ -156,7 +160,7 @@
         </div>
     </section>
     <section class="section4">
-        <img class="banner" src="pictures/banner2.png" alt="" srcset="">
+        <img class="banner" src="pictures/banner1.png" alt="" srcset="">
         <div class="info">
             <img class="picture" src="pictures/avater.png" alt="">
             <div class="about">
@@ -184,7 +188,28 @@
             </div>
         </div>
     </section>
-    <section ></section>
+    <section class="section5">
+        <img class="banner" src="pictures/banner1.png" alt="" srcset="">
+        <div class="contact-message">
+            <div class="contact">
+                <h1>Contack Us</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt explicabo nesciunt odio consectetur
+                    earum fugiat facere fugit enim optio? Reprehenderit, facilis libero!</p>
+                <p>+000 95 123 456 78 21</p>
+                <p>+000 95 123 456 78 21</p>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div class="inputs">
+                        <input type="text" placeholder="Name" required>
+                        <input type="text" placeholder="Mail" name="" id="">
+                    </div>
+                    <textarea name="" id="" placeholder="Message" ></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="footer-container">
             <div class="contact">
@@ -219,8 +244,30 @@
         </div>
     </footer>
     <script>
+        window.onresize =function(e){
+            if (window.innerWidth<=500){
+                document.getElementById('navigation').className="nav2";
+            }
+            else{
+                document.getElementById('navigation').className="nav1";
+            }
+        }
+        var flag=true;
         const menu = document.querySelector('.menu');
         menu.onclick = function (e) {
+            const banner=document.getElementById('navigation');
+            if (window.innerWidth<=500) {
+                banner.className="nav2"
+                console.log(flag);
+                if (flag) {
+                    banner.setAttribute("class",banner.className +' nav-active');
+                    flag=false;
+                }
+                else{
+                    banner.setAttribute("class",' nav2');
+                    flag=true;
+                }
+            }
             console.log("menu click");
         }
 
