@@ -10,6 +10,14 @@
   --btnfont: 12px;
   --fontfamily1: "Raleway", sans-serif;
   --fontfamily2: "Josefin Sans", sans-serif;
+  --bgcolor:transparent;
+  --btncolor:var(--col1);
+  --textcolor:var(--col1)
+;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -38,9 +46,12 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  height: 80px;
+  height: 70px;
   padding: 0px 30px;
   z-index: 2;
+  background-color: var(--bgcolor);
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 header .main-icon {
@@ -68,7 +79,7 @@ header .nav1 ul a {
   font-style: var(--fontfamily2);
   font-size: 20px;
   text-decoration: none;
-  color: white;
+  color: var(--textcolor);
   cursor: pointer;
 }
 
@@ -190,13 +201,27 @@ header svg {
   width: 35px;
   background-size: cover;
   background-repeat: no-repeat;
-  fill: white;
+  fill: var(--btncolor);
   -webkit-transition: fill 0.3s;
   transition: fill 0.3s;
 }
 
 header svg:hover {
-  fill: #89C3EA;
+  fill: var(--btncolor);
+}
+
+header svg:active {
+  fill: var(--btncolor);
+}
+
+header .svg-active {
+  --btncolor:var(--col1);
+}
+
+.header-scroll {
+  --bgcolor:var(--col1);
+  --btncolor:var(--col8);
+  --textcolor:var(--col8);
 }
 
 .intro {

@@ -19,19 +19,17 @@
 </head>
 
 <body>
-    <header>
+    <header id="nav-header">
         <a href="index.html"><img class="main-icon" src="pictures/pangolin.svg" alt=""></a>
         <nav class="nav2" id="navigation">
             <ul>
-                <li><a href="#"><span>Home</span></a></li>
-                <li><a href="#"><span>Pages</span></a></li>
-                <li><a href="#"><span>Portfolio</span></a></li>
-                <li><a href="#"><span>Blog</span></a></li>
-                <li><a href="#"><span>Shop</span></a></li>
-                <li><a href="#"><span>Elements</span></a></li>
+                <li><a href="#sec1"><span>Home</span></a></li>
+                <li><a href="#sec4"><span>About</span></a></li>
+                <li><a href="#sec3"><span>Portfolio</span></a></li>
+                <li><a href="#sec5"><span>Contact Me</span></a></li>
             </ul>
         </nav>
-        <div><svg class="menu" height="384pt" viewBox="0 -53 384 384" width="384pt" xmlns="http://www.w3.org/2000/svg">
+        <div><svg onclick="asd()" class="menu" height="384pt" viewBox="0 -53 384 384" width="384pt" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
                 <path
@@ -40,7 +38,7 @@
                     d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
             </svg></div>
     </header>
-    <section class="intro">
+    <section class="intro" id="sec1">
         <div class="background-img"></div>
         <div class="overlay"></div>
         <section class="btn-text">
@@ -49,7 +47,7 @@
             <button>VIEW MORE</button>
         </section>
     </section>
-    <section class="section2">
+    <section class="section2" id="sec2">
         <div class="box">
             <!---->
             <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74.69 44.46">
@@ -109,7 +107,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
     </section>
-    <section class="section3">
+    <section class="section3" id="sec3">
         <div class="section3-header">
             <h1>Check our work</h1>
             <p>Inspired by the nature, designed by the best artists.</p>
@@ -159,7 +157,7 @@
             </div>
         </div>
     </section>
-    <section class="section4">
+    <section class="section4" id="sec4">
         <img class="banner" src="pictures/banner1.png" alt="" srcset="">
         <div class="info">
             <img class="picture" src="pictures/avater.png" alt="">
@@ -188,7 +186,7 @@
             </div>
         </div>
     </section>
-    <section class="section5">
+    <section class="section5" id="sec5" >
         <img class="banner" src="pictures/banner1.png" alt="" srcset="">
         <div class="contact-message">
             <div class="contact">
@@ -244,7 +242,10 @@
         </div>
     </footer>
     <script>
-        window.onresize =function(e){
+        window.onload=load();
+        window.onresize =load;
+        function load() {
+            console.log('nav');
             if (window.innerWidth<=500){
                 document.getElementById('navigation').className="nav2";
             }
@@ -252,21 +253,31 @@
                 document.getElementById('navigation').className="nav1";
             }
         }
-        var flag=true;
-        const menu = document.querySelector('.menu');
-        menu.onclick = function (e) {
-            const banner=document.getElementById('navigation');
-            if (window.innerWidth<=500) {
-                banner.className="nav2"
-                console.log(flag);
-                if (flag) {
-                    banner.setAttribute("class",banner.className +' nav-active');
-                    flag=false;
+        const section1=document.querySelector('.intro');
+        const header=document.querySelector('header');
+        const options={
+            threshold:0,
+            rootMargin:'-150px'
+        }
+        const observer =new IntersectionObserver((entries,observer)=>{
+            entries.forEach(entry=>{
+                if(!entry.isIntersecting){
+                    header.classList.add('header-scroll');
                 }
                 else{
-                    banner.setAttribute("class",' nav2');
-                    flag=true;
+                    header.classList.remove('header-scroll');
                 }
+            })
+        },options);
+        observer.observe(section1);
+        const menu=document.querySelector('.menu');
+        menu.onclick = function (e) {
+            if (window.innerWidth<=500) {
+                const banner=document.querySelectorAll('header')[0];
+                console.log(banner);
+                banner.getElementsByClassName('nav2')[0].classList.toggle('nav-active');
+                banner.getElementsByClassName('menu')[0].classList.toggle('svg-active');
+                
             }
             console.log("menu click");
         }
