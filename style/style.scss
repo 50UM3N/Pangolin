@@ -13,11 +13,12 @@
     --fontfamily1: "Raleway", sans-serif;
     //--fontfamily2: "Baloo 2", cursive;
     --fontfamily2: "Josefin Sans", sans-serif;
-    --bgcolor:transparent;
-    --btncolor:var(--col1);
-    --textcolor:var(--col1)
+    --bgcolor: transparent;
+    --btncolor: var(--col1);
+    --textcolor: var(--col1);
 }
-html{
+html {
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -33,7 +34,6 @@ body {
     background-color: var(--col1);
 }
 header {
-    
     position: fixed;
     display: flex;
     align-items: center;
@@ -43,14 +43,13 @@ header {
     padding: 0px 30px;
     z-index: 2;
     background-color: var(--bgcolor);
-    transition: all .3s;
+    transition: all 0.3s;
     .main-icon {
         position: relative;
         width: 40px;
         height: 40px;
         background-repeat: no-repeat;
         z-index: 200;
-        //background-image: url(/pictures/pangolin.svg);
     }
     .nav1 {
         ul {
@@ -125,7 +124,7 @@ header {
             left: -260px;
             width: 100vw;
             height: 100vh;
-            transition: all .3s;
+            transition: all 0.3s;
             z-index: -1;
             li {
                 left: 200;
@@ -143,13 +142,13 @@ header {
             }
         }
     }
-    .nav-active{
-        
+    .nav-active {
         opacity: 1;
         visibility: visible;
-        &::before{
+        &::before {
             transform: translateX(0%);
-        }ul{
+        }
+        ul {
             top: 0px;
             left: -160px;
             opacity: 1;
@@ -167,19 +166,20 @@ header {
         &:hover {
             fill: var(--btncolor);
         }
-        &:active{
+        &:active {
             fill: var(--btncolor);
         }
     }
-    .svg-active{
-        --btncolor:var(--col1);
+    .svg-active {
+        --btncolor: var(--col1);
     }
 }
-.header-scroll{
-    --bgcolor:var(--col1);
-    --btncolor:var(--col8);
-    --textcolor:var(--col8);
+.header-scroll {
+    --bgcolor: var(--col1);
+    --btncolor: var(--col8);
+    --textcolor: var(--col8);
 }
+//intro or home
 .intro {
     --width-height: 100%;
     position: relative;
@@ -241,47 +241,79 @@ header {
         }
     }
 }
-.section2 {
+@media (min-width: 1067px) {
+    .left {
+        transition: all 0.4s;
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    .middle {
+        transition: all 0.5s;
+        opacity: 0;
+    }
+    .right {
+        opacity: 0;
+        transition: all 0.4s;
+        transform: translateX(100%);
+    }
+    .v {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     height: auto;
-    width: 100%;
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px 0px;
+}
+.sec {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    .box {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        text-align: center;
-        padding: 35px;
-        flex: 1 0 272px;
-        height: 300px;
-        max-width: 400px;
-        margin: 10px 10px;
+    flex-direction: column;
+    margin: 40px 0px;
+}
 
-        svg {
-            width: 70px;
-            height: 70px;
-            fill: var(--col8);
-        }
-        a:nth-child(2) {
-            text-decoration: none;
-            font-style: var(--fontfamily2);
-            font-weight: 500;
-            font-size: 28px;
-            color: var(--col8);
-            margin: 20px 0px 10px 0px;
+//work
+.section2 {
+    .container {
+        justify-content: space-evenly;
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+            padding: 35px;
+            flex: 1 0 272px;
+            height: 300px;
+            max-width: 400px;
+            margin: 10px 10px;
+
+            svg {
+                width: 70px;
+                height: 70px;
+                fill: var(--col8);
+            }
+            a:nth-child(2) {
+                text-decoration: none;
+                font-style: var(--fontfamily2);
+                font-weight: 500;
+                font-size: 28px;
+                color: var(--col8);
+                margin: 20px 0px 10px 0px;
+            }
         }
     }
 }
+//portfolios
 .section3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    height: auto;
     .section3-header {
         h1 {
             color: var(--col8);
@@ -289,19 +321,14 @@ header {
             font-size: 60px;
             font-weight: 500;
             margin-bottom: 15px;
+            text-align: center;
         }
         p {
             font-size: 20px;
         }
     }
-    .portfolios {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
+    .container {
         justify-content: center;
-        height: auto;
-        max-width: 1400px;
-        margin: 50px 0px;
         .projects-box {
             position: relative;
             display: flex;
@@ -347,24 +374,15 @@ header {
         }
     }
 }
+//about me
 .section4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 0px;
     .banner {
         position: relative;
         width: 100%;
     }
-    .info {
-        position: relative;
-        display: flex;
-        justify-content: space-evenly;
+    .container {
         align-items: center;
-        flex-wrap: wrap;
-        width: 80%;
-        max-width: 1300px;
+        justify-content: space-around;
         .picture {
             width: 20vmax;
             max-width: 350px;
@@ -373,11 +391,9 @@ header {
             margin: 50px 0px;
         }
         .about {
-            //position: absolute;
-            //right: 500px;
+            height: 180px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             flex: 0 0 400px;
             margin: 0px 70px;
             p:nth-child(1) {
@@ -391,7 +407,7 @@ header {
                 font-weight: 400;
                 color: var(--col6);
                 font-size: 30px;
-                margin: 10px 0px 20px 0px;
+                margin: 0px 0px 20px 0px;
             }
             p:nth-child(3) {
                 font-size: 20px;
@@ -421,28 +437,17 @@ header {
         }
     }
 }
+//contact me section
 .section5 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 40px 0px;
     .banner {
         position: relative;
         width: 100%;
     }
-    .contact-message {
-        width: 90%;
-        max-width: 1300px;
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-top: 20px;
+    .container {
         .contact {
             flex: 1 0 280px;
             max-width: 500px;
-            padding-right: 20px;
+            margin: 20px;
             h1 {
                 font-family: var(--fontfamily2);
                 font-weight: 500;
@@ -461,12 +466,12 @@ header {
             form {
                 display: flex;
                 flex-direction: column;
+                margin: 20px;
                 .inputs {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     margin: 10px 0px;
-
                     input {
                         outline: none;
                         width: 49%;
@@ -510,24 +515,25 @@ header {
         }
     }
 }
+//footer section
 footer {
     display: flex;
     justify-content: center;
     position: relative;
     width: 100%;
+    height: auto;
+    padding: 20px 0px;
     background-color: var(--col8);
     color: var(--col4);
-    padding: 20px 0px;
-    height: auto;
     .footer-container {
         --hfonts: 35px;
         --tfonts: 16px;
         --ifonts: 14px;
         --fweight: 400;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         flex-wrap: wrap;
-        width: 95%;
+        width: 90%;
         max-width: 1300px;
         .contact {
             --width: 230px;
@@ -537,15 +543,13 @@ footer {
             max-width: var(--width);
             margin: 20px 20px;
             color: var(--color);
-            //border-right: 1px solid lightgray ;
             .address {
-                height: 85px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                //border-bottom: 1px lightgrey solid;
-                margin-bottom: 10px;
+                height: 85px;
                 width: 100%;
+                margin-bottom: 10px;
                 h1 {
                     color: white;
                     font-family: var(--fontfamily2);
@@ -594,8 +598,8 @@ footer {
             flex-direction: column;
             justify-content: space-between;
             flex: 1 0 388px;
-            margin: 20px 20px;
             max-width: 380px;
+            margin: 20px 20px;
             h1 {
                 color: white;
                 font-family: var(--fontfamily2);
@@ -630,19 +634,14 @@ footer {
         }
     }
 }
-@media (max-width: 860px) {
-    header .nav1 ul a {
-        padding: 10px 5px;
-        font-size: 15px;
-    }
-}
+//portfoilo box and pictur text size
 @media (max-width: 520px) {
-    .section3 .portfolios .projects-box {
+    .section3 .container .projects-box {
         width: 100%;
         max-width: 300px;
         min-width: 90px;
     }
-    .section4 .info {
+    .section4 .container {
         .picture {
             margin: 50px 50px;
         }
@@ -673,20 +672,34 @@ footer {
         }
     }
 }
+//socialmedia icon imvisible
 @media (max-width: 1018px) {
-    .section4 .info .socilmedia {
+    .section4 .container .socilmedia {
         display: none;
     }
     footer .footer-container .form {
         display: none;
     }
 }
-@media (max-width: 981px) {
-    .section4 .info .about {
-        align-items: center;
-        text-align: center;
+//nav and picturebox
+@media (max-width: 839px) {
+    header .nav1 ul a {
+        padding: 10px 5px;
+        font-size: 15px;
+    }
+    .section4 .container {
+        justify-content: center;
+        .picture {
+            margin-top: 0px;
+        }
+        .about {
+            height: 120px;
+            align-items: center;
+            text-align: center;
+        }
     }
 }
+//fooler text align
 @media (max-width: 673px) {
     footer .footer-container {
         width: 85%;
