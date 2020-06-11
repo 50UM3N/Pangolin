@@ -247,7 +247,7 @@ header .svg-active {
   position: absolute;
   width: var(--width-height);
   height: var(--width-height);
-  background: rgba(0, 0, 0, 0.164);
+  background: rgba(0, 0, 0, 0.459);
   z-index: -1;
 }
 
@@ -267,6 +267,10 @@ header .svg-active {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   width: var(--width-height);
   height: var(--width-height);
   color: var(--col4);
@@ -286,7 +290,7 @@ header .svg-active {
   padding: 0px 20px 0px 20px;
 }
 
-.intro .btn-text button {
+.intro .btn-text a {
   padding: 10px 20px 10px 20px;
   border: none;
   border-radius: 3px;
@@ -294,32 +298,34 @@ header .svg-active {
   font-weight: bold;
   background-color: var(--col4);
   color: var(--col8);
+  outline: none;
+  text-decoration: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.intro .btn-text button:hover {
+.intro .btn-text a:hover {
   background-color: var(--col8);
   color: var(--col4);
 }
 
 @media (min-width: 1067px) {
   .left {
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
+    -webkit-transition: all 1.2s;
+    transition: all 1.2s;
     opacity: 0;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
   .middle {
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
     opacity: 0;
   }
   .right {
     opacity: 0;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
+    -webkit-transition: all 1.2s;
+    transition: all 1.2s;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
   }
@@ -343,7 +349,7 @@ header .svg-active {
   height: auto;
   width: 90%;
   max-width: 1100px;
-  margin: 50px 0px;
+  margin: 30px 0px;
 }
 
 .sec {
@@ -377,20 +383,16 @@ header .svg-active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  padding: 35px;
+  padding: 5px 35px;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 272px;
           flex: 1 0 272px;
-  height: 300px;
+  height: 230px;
   max-width: 400px;
-  margin: 10px 10px;
 }
 
 .section2 .container .box svg {
@@ -921,7 +923,6 @@ footer .footer-container .form input:nth-child(7):hover {
     margin-top: 0px;
   }
   .section4 .container .about {
-    height: 120px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;

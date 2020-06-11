@@ -3,7 +3,7 @@ const section1 = document.querySelector('.intro');
 const header = document.querySelector('header');
 const options = {
     threshold: 0,
-    rootMargin: '-150px 0px -400px 0px'
+    rootMargin: '-150px 0px -338px 0px'
 }
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
