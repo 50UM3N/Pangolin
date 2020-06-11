@@ -305,21 +305,21 @@ header .svg-active {
 
 @media (min-width: 1067px) {
   .left {
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
+    -webkit-transition: all 1.2s;
+    transition: all 1.2s;
     opacity: 0;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
   .middle {
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
     opacity: 0;
   }
   .right {
     opacity: 0;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
+    -webkit-transition: all 1.2s;
+    transition: all 1.2s;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
   }

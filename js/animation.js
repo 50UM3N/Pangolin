@@ -3,29 +3,20 @@ const section1 = document.querySelector('.intro');
 const header = document.querySelector('header');
 const options = {
     threshold: 0,
-    rootMargin: '-150px 0px -400px 0px'
+    rootMargin: '-150px 0px -300px 0px'
 }
 const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            header.classList.add('header-scroll');
-        } else {
-            header.classList.remove('header-scroll');
-        }
+        if (!entry.isIntersecting) { header.classList.add('header-scroll'); }
+        else { header.classList.remove('header-scroll'); }
     })
 }, options);
 observer.observe(section1);
 const animation = new IntersectionObserver((entries, animation) => {
     entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        }
-        entry.target.querySelectorAll('.left').forEach(element => {
-            element.classList.add('v');
-        });
-        entry.target.querySelectorAll('.right').forEach(element => {
-            element.classList.add('v');
-        });
+        if (!entry.isIntersecting) { return; }
+        entry.target.querySelectorAll('.left').forEach(element => { element.classList.add('v'); });
+        entry.target.querySelectorAll('.right').forEach(element => { element.classList.add('v'); });
         (entry.target.querySelectorAll('.middle').length) ? entry.target.querySelectorAll('.middle').forEach(element => { element.classList.add('v'); }) : console.log('😢');
         animation.unobserve(entry.target);
     })
@@ -33,9 +24,7 @@ const animation = new IntersectionObserver((entries, animation) => {
 if (window.innerWidth >= 1067) {
     console.log('😊');
     const containers = document.querySelectorAll('.container');
-    containers.forEach(container => {
-        animation.observe(container);
-    });
+    containers.forEach(container => { animation.observe(container); });
 }
 // else{
 //     document.querySelectorAll('.left').forEach(element=>{element.classList.remove})
@@ -45,11 +34,8 @@ window.onload = load();
 window.onresize = load;
 
 function load() {
-    if (window.innerWidth <= 500) {
-        document.getElementById('navigation').className = 'nav2';
-    } else {
-        document.getElementById('navigation').className = 'nav1';
-    }
+    if (window.innerWidth <= 500) { document.getElementById('navigation').className = 'nav2'; }
+    else { document.getElementById('navigation').className = 'nav1'; }
 }
 //observer.observe(section4);
 const menu = document.querySelector('.menu');

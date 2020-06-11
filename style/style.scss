@@ -243,17 +243,17 @@ header {
 }
 @media (min-width: 1067px) {
     .left {
-        transition: all 0.4s;
+        transition: all 1.2s;
         opacity: 0;
         transform: translateX(-100%);
     }
     .middle {
-        transition: all 0.5s;
+        transition: all 1s;
         opacity: 0;
     }
     .right {
         opacity: 0;
-        transition: all 0.4s;
+        transition: all 1.2s;
         transform: translateX(100%);
     }
     .v {
