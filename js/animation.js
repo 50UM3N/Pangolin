@@ -59,4 +59,12 @@ menu.onclick = function (e) {
         banner.getElementsByClassName('nav2')[0].classList.toggle('nav-active');
         banner.getElementsByClassName('menu')[0].classList.toggle('svg-active');
     }
+    else {
+        const silder = document.querySelector('.slider-container');
+        silder.classList.add('sc-visible');
+        console.log('menu clicked');
+
+    }
 }
+window.addEventListener('mouseup', (e) => { e.target.classList.remove('sc-visible'); });
+const close = document.querySelector('.icon').onclick = e => { document.querySelector('.slider-container').classList.remove('sc-visible') }
